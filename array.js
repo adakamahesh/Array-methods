@@ -33,3 +33,20 @@ console.log(fruits.pop());//this is usesd to delete the last element of array
 console.log(fruits.push('orange'));//this is used to add the element of array
 fruits.sort();//this used to order(or) sort the data
 console.log(fruits);
+console.log('reversed:',fruits.reverse());//this is used to revers the array
+const reversed = fruits.reverse();
+console.log(fruits);
+const shifted = fruits.shift();//this  is used to shifted the first element of array
+console.log(fruits);
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+console.log(animals.slice(2));//slice is used to start the index of array is 2
+console.log(animals.slice(2, 4));//this is used to between the array index
+console.log(fruits.unshift('banana', 'mango'));//it is used to added the element in starting of array
+console.log(fruits);
+// const iterative=fruits.values()
+for(const value of fruits.values()){
+    console.log(value);//this is used to display the all values of array 
+}
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');//splice(start, deleteCount, item1, item2)
+console.log(months);
