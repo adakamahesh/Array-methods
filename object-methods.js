@@ -61,3 +61,34 @@ const object4= {
 };
 console.log(Object.hasOwn(object4, 'prop'));
 console.log(Object.hasOwn(object4, 'toString'));
+//Object.seal()->it is used to new properties cannot be added, existing properties can not be removed
+const object5 = {
+  property1: 42,
+};
+Object.seal(object1);
+object5.property1 = 33;
+console.log(object5.property1);
+delete object1.property1; // Cannot delete when sealed
+console.log(object5.property1);
+//Object.isSealed()->it is used to check the object is sealed or not if seales give true otherwise false
+console.log(Object.isSealed(object5));
+Object.seal(object5);
+console.log(Object.isSealed(object5));
+//Object.prototype.toString()->this is used to assigne property type of string
+function Dog(name) {
+  this.name = name;
+}
+const dog1 = new Dog("Gabby");
+Dog.prototype.toString = function dogToString() {
+  return `${this.name}`;
+};
+console.log(dog1.toString());
+//Object.prototype.valueOf()->this is also work like as Object.prototype.toString()
+function MyNumberType(n) {
+  this.number = n;
+}
+MyNumberType.prototype.valueOf = function () {
+  return this.number;
+};
+const Number = new MyNumberType(4);
+console.log(Number + 8);
